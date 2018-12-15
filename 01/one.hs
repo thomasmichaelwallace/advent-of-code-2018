@@ -1,4 +1,4 @@
--- usage: cat input.txt | ./main
+-- usage: cat input.txt | ./one
 main = interact calibrate
 
 calibrate :: String -> String
