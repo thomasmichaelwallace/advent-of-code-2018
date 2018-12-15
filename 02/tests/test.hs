@@ -1,6 +1,7 @@
 import Test.Tasty
 import Test.Tasty.HUnit
 import One
+import Two
 
 main = defaultMain tests
 
@@ -15,5 +16,14 @@ unitTests = testGroup "Unit tests"
     , "abcccd"
     , "aabcdd"
     , "abcdee"
-    , "ababab"] @?= 12
+    , "ababab"] @?= 12,
+
+    testCase "Finds box with differeing ids of one char" $
+    Two.proto [ "abcde"
+    , "fghij"
+    , "klmno"
+    , "pqrst"
+    , "fguij"
+    , "axcye"
+    , "wvxyz"] @?= ['f', 'g', 'i', 'j']
   ]
