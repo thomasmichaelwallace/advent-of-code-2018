@@ -1,6 +1,7 @@
+-- usage: /bin/cat input.txt | cabal run
 module Main where
 
-import Yawn
+import One
 
 main :: IO ()
-main = putStrLn . show $ Yawn.getTwo ()
+main = interact $ show . One.checksum . lines

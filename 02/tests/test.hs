@@ -1,6 +1,6 @@
 import Test.Tasty
 import Test.Tasty.HUnit
-import Yawn
+import One
 
 main = defaultMain tests
 
@@ -8,10 +8,12 @@ tests :: TestTree
 tests = testGroup "Tests" [unitTests]
 
 unitTests = testGroup "Unit tests"
-  [ testCase "List comparison (different length)" $
-      [1, 2, 3] `compare` [1, Yawn.getTwo ()] @?= GT
-
-  -- the following test does not hold
-  , testCase "List comparison (same length)" $
-      [1, 2, 3] `compare` [1,2,2] @?= LT
+  [ testCase "Checksum a group of box ids" $
+    One.checksum [ "abcdef"
+    , "bababc"
+    , "abbcde"
+    , "abcccd"
+    , "aabcdd"
+    , "abcdee"
+    , "ababab"] @?= 12
   ]
