@@ -2,6 +2,7 @@
 module Main where
 
 import One
+import Two
 
 main :: IO ()
-main = interact $ show . One.checksum . lines
+main = interact $ show . Two.proto . lines
